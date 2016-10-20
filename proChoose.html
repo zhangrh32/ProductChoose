@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="format-detection" content="telephone=no" />
+		<title>淘拍拍产品中心</title>
+		<link rel="stylesheet" href="prod/css/style.css" />
+<!--        <link rel="stylesheet" href="/css/style.css" />-->
+		<link rel="stylesheet" href="prod/css/fonts/iconfont.css" />
+		<link rel="stylesheet" href="prod/css/lightbox.css" />
+		<script src="prod/js/jquery-1.11.1.min.js"></script>
+		<script src="prod/js/body.js"></script>
+		<script>
+			//页面rem定义
+			var Width = window.screen.width;
+	        var Height = window.screen.height;
+	        var html = document.getElementsByTagName("html")[0];
+	        var body = document.getElementsByTagName("body")[0];
+	        html.style.fontSize = Width/7.5+'px';
+	        var page='';
+        		var PageList;
+		</script>
+	</head>
+	<body>
+		<div class="htmleaf-container loadingbg">
+			<main class="loaded">
+				<div class="loaders">
+					<div class="loader loadpos">
+						<div class="loader-inner semi-circle-spin">
+							<div>
+								<img class="loading_logo" src="prod/img/loading.png">
+							</div>
+						</div>
+						<span class="loadingTxt">努力加载中</span>
+					</div>
+				</div>
+			</main>
+		</div>
+		<!--头部-->
+		<header id="bodyTop">
+			<a href="javascript:history.go(-1)"><i class="goBack iconfont"></i></a>
+		    <span id="title">淘拍拍商城</span>
+		    <span class="rightbtn" style="display: none;"></span>
+		</header>
+		<!--页面内容-->
+		<div id="bodyContent">
+			<script>
+	document.getElementById("title").innerHTML="选片";
+	document.getElementsByTagName("body")[0].style.background="#FFFFFF";
+	$(function(){
+		$(".footertwo").remove();
+	});
+</script>
+<link rel="stylesheet" href="prod/demo/swipebox.css">
+<link rel="stylesheet" href="prod/css/lightbox.css" />
+<style>
+	.Jxbottom .right label {
+		margin-left: 0.1rem;
+	}
+	#sure {
+		display: none;
+	}
+	.showMessage {
+		z-index: 99999999;
+		bottom: 2rem;
+	}
+</style>
+<div class="Jxturing clear">
+	<!--<div class="fl">
+		<a class="swipebox"  href="/img/login.png">
+			<div>
+				<img id="img0" data-id="0"  class="divimg" src="/img/login.png" />
+			</div>
+		</a>
+		<p>
+			<img src="prod/img/jxno.png" />
+		</p>
+	</div>-->
+	
+</div>
+<div class="Jxbottom">
+	<span class="left">提交</span>
+	<span class="right"><i class="num">0</i> / <i class="can">6</i><label>加选</label></span>
+</div>
+<script type="text/javascript" src="prod/js/jquery.swipebox.js" ></script>
+<script>
+	$( document ).ready(function() {
+			/* Basic Gallery */
+			$( '.swipebox' ).swipebox();
+			
+			/* Dynamic Gallery */
+
+      });
+//    setInterval(function(){
+//    		chooseImg();
+//    },0.1);
+</script>
+<script>
+	var arr = [];
+	var allarr = [{con:"",id:"0",isJx:"0",img:"prod/img/121111.png"},{con:"",id:"1",isJx:"0",img:"prod/img/usercenter_bgimg.png"},{con:"",id:"2",isJx:"0",img:"prod/img/xiangkuangw1.png"},{con:"",id:"3",isJx:"0",img:"prod/img/lunbo.jpg"}];
+	$(function(){
+		//图片加载更改样式
+		var write = '';
+		write += '<div class="popWrite hide"><div><p>修片意见<img onclick="closeW()" src="prod/img/pclose.png" /> </p>';
+		write += '<textarea id="suggest" placeholder="请填写您对该张照片的修片意见"></textarea><button onclick="sureS()">提交</button></div></div>';
+		$("html").append(write);
+		Page();
+	});
+	function setImg(obj){
+		var img = new Image();
+		var src = obj.src;
+		obj.onload = function(){
+			var w = obj.width;
+			var h = obj.height;
+			if (w>h) {
+				$(this).addClass("divimg2");
+				$(this).parent("div").addClass("flex");
+				$(this).parent("div").addClass("lineC");
+			}
+		}
+	}
+	//加载页面
+	function Page(){
+			$(".Jxturing").html("");
+			var html = '';
+			for (var i in allarr) {
+				html += '<div class="fl">';
+				html += '<a class="swipebox"  href="'+allarr[i].img+'">';
+				html += '<div><img id="img'+allarr[i].id+'" data-id="'+i+'"  class="divimg" src="'+allarr[i].img+'" /></div>';
+				html += '</a>';
+				if (allarr[i].isJx==1) {
+					html += '<p onclick="selectP(this)"><img src="prod/img/jxok.png" /></p>';
+				} else{
+					html += '<p onclick="selectP(this)"><img src="prod/img/jxno.png" /></p>';
+				}
+				html += '</div>';
+			}
+			$(".Jxturing").html(html);
+			$(".Jxturing div a div img").each(function(){
+				setImg(this);
+			});
+	}
+	//打开seipebox
+	function chooseImg(a){
+	    $("#title").html("查看大图");
+		$(".rightbtn").show();
+		$(".rightbtn").addClass("shareP");
+		$(".rightbtn").html("<img src='prod/img/share.png'/>");
+		$(".pigWrite").show();
+		$(".pigChoose").show();
+	}
+	//关闭seipebox
+	function closeImg(){
+		$("#title").html("选片");
+		$(".rightbtn").hide();
+		$(".pigWrite").hide();
+		$(".pigChoose").hide();
+		Page();
+		jxNum();
+		
+	}
+	//关闭修片意见
+	function closeW(){
+		$(".popWrite").fadeOut();
+	}
+	//提交修片意见
+	function sureS(){
+		var con = $("#suggest").val();
+		if (!con) {
+			showMessage("还未填写修片意见~");
+			return false;
+		}
+		//当前选中的是第几个
+		var t = "";
+		$("#swipebox-slider .slide").each(function(index){
+			if ($(this).hasClass("current")) {
+				t=index;
+			}
+		});
+		allarr[t].con=con;
+		allarr[t].isJx="1";
+		$(".pigChoose").find("img").attr("src","prod/img/jxok.png");
+		$(".popWrite").fadeOut();
+		$(".pigWrite").hide();
+		$(".showCon").show();
+		$(".showCon").find("p").html(con);
+	}
+	//点击大图选择精修以及修片意见
+	function setPhoto(e){
+		for (var i in allarr) { 
+			if(allarr[i].id == e){
+				if (allarr[i].isJx == "1") {
+					$(".pigChoose").find("img").attr("src","prod/img/jxok.png");
+					if (allarr[i].con) {
+						$(".pigWrite").hide();
+						$(".showCon").show();
+						$(".showCon").find("p").html(allarr[i].con);
+					}
+				} else{
+					$(".pigChoose").find("img").attr("src","prod/img/jxno.png");
+					$(".pigWrite").show();
+					$(".showCon").hide();
+					$(".showCon").find("p").html("");
+				}
+			}
+		}
+				
+	}
+	//点击提交
+	$(".Jxbottom .left").click(function(){
+		var can = $(".Jxbottom .right .can").html();
+		//如果未选满
+		if ($(".pok").length < can) {
+			var t = '您还未选择到'+can+'张请继续';
+			PopupSure(t,"确定","确定",{
+				confirm:function(){
+					return false;
+				}
+			});
+		} else{
+		    location.href = "/x/JXtruing";
+		}
+	});
+	//选择照片精修
+	function selectP(e){
+		var d = $(e).parent("div").find("div").children("img").attr("data-id");
+		if (!$(e).hasClass("pok")) {
+			$(e).find("img").attr("src","prod/img/jxok.png");
+			$(e).addClass("pok");
+			allarr[d].isJx="1";
+			
+		} else{
+			$(e).find("img").attr("src","prod/img/jxno.png");
+			$(e).removeClass("pok");
+			allarr[d].isJx="0";
+		}
+		jxNum();
+	}
+	//计算选择精修片的数量
+	function jxNum(){
+		arr=[];
+		$(".Jxturing p").each(function(){
+			if ($(this).hasClass("pok")) {
+				arr.push($(this).parent("div").children("a").find("img").attr("id"));
+			} 
+		});
+		$(".Jxbottom .right .num").html(arr.length);
+	}
+</script>		
+		</div>
+		<div class="footertwo mianred"><i class="iconfont pplogo">&#xe62e;</i></div>
+	</body>
+</html>
+<script>
+	$(function(){ 
+		var t_img; // 定时器
+		var isLoad = true; // 控制变量
+		
+		// 判断图片加载状况，加载完成后回调
+		isImgLoad(function(){
+		   endloading();
+		});
+		
+		// 判断图片加载的函数
+		function isImgLoad(callback){
+		    // 查找所有封面图，迭代处理
+		    $('img').each(function(){
+		        // 找到为0就将isLoad设为false，并退出each
+		        if(this.height === 0){
+		            isLoad = false;
+		            return false;
+		        }
+		    });
+		    // 为true，没有发现为0的。加载完毕
+		    if(isLoad){
+		        clearTimeout(t_img); // 清除定时器
+		        // 回调函数
+		        callback();
+		    // 为false，因为找到了没有加载完成的图，将调用定时器递归
+		    }else{
+		        isLoad = true;
+		        t_img = setTimeout(function(){
+		            isImgLoad(callback); // 递归扫描
+		        },500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+		    }
+		}
+	});
+	function endloading(){
+		$('.loadingbg').fadeOut(200);
+	}
+    $(window).scroll(function(){
+        if(page){
+            var scrollTop = $(this).scrollTop();
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            if(scrollHeight-(scrollTop + windowHeight) < 400 && scrollTop>100){
+                PageList();
+            }
+        }else{
+//          showMessage("已到底部啦~");
+        }
+    });
+</script>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="format-detection" content="telephone=no" />
+		<title>淘拍拍产品中心</title>
+		<link rel="stylesheet" href="prod/css/style.css" />
+<!--        <link rel="stylesheet" href="/css/style.css" />-->
+		<link rel="stylesheet" href="prod/css/fonts/iconfont.css" />
+		<link rel="stylesheet" href="prod/css/lightbox.css" />
+		<script src="prod/js/jquery-1.11.1.min.js"></script>
+		<script src="prod/js/body.js"></script>
+		<script>
+			//页面rem定义
+			var Width = window.screen.width;
+	        var Height = window.screen.height;
+	        var html = document.getElementsByTagName("html")[0];
+	        var body = document.getElementsByTagName("body")[0];
+	        html.style.fontSize = Width/7.5+'px';
+	        var page='';
+        		var PageList;
+		</script>
+	</head>
+	<body>
+		<div class="htmleaf-container loadingbg">
+			<main class="loaded">
+				<div class="loaders">
+					<div class="loader loadpos">
+						<div class="loader-inner semi-circle-spin">
+							<div>
+								<img class="loading_logo" src="prod/img/loading.png">
+							</div>
+						</div>
+						<span class="loadingTxt">努力加载中</span>
+					</div>
+				</div>
+			</main>
+		</div>
+		<!--头部-->
+		<header id="bodyTop">
+			<a href="javascript:history.go(-1)"><i class="goBack iconfont"></i></a>
+		    <span id="title">淘拍拍商城</span>
+		    <span class="rightbtn" style="display: none;"></span>
+		</header>
+		<!--页面内容-->
+		<div id="bodyContent">
+			<script>
+	document.getElementById("title").innerHTML="";
+</script>
+<link rel="stylesheet" href="prod/css/swiper.min.css">
+<style>
+	.rightbtn {
+		color: #FFFFFF;
+	}
+	.rightbtn:active {
+		color: #CCCCCC;
+	}
+	.over {
+		width: 5.3rem;
+	    display: block;
+	    margin-left: 1rem;
+	}
+	.swiper-container {
+		background: #101010;
+	}
+	.gallery-top,.gallery-top .swiper-slide,.gallery-top .swiper-slide div {
+		height: 7.6rem;
+		overflow: hidden;
+	}
+	.gallery-thumbs .swiper-wrapper {
+		height: 2.04rem;
+	}
+	.gallery-thumbs .swiper-slide,.gallery-thumbs .swiper-slide div {
+		height: 1.96rem;
+	}
+	.gallery-thumbs {
+		height: 2.04rem;
+		padding-top: 0.4rem;
+		border-top: 1px solid #FFFFFF;
+	}
+	.gallery-thumbs .swiper-slide div img {
+		height: 100%;
+		width: auto;
+	}
+	.gallery-thumbs .swiper-slide, .swiper-wrapper {
+		width: auto !important;
+	}
+	.gallery-thumbs .swiper-slide-active {
+		border: 2px solid #FB6165;
+		border-radius: 0.04rem;
+		opacity: 1 !important;
+	}
+	.gallery-thumbs .swiper-slide {
+        opacity: 0.4;
+    }
+    .gallery-top .swiper-slide div {
+    		width: 4.8rem;
+    		height: auto;
+    }
+    .gallery-top img {
+    		width: 100%;
+    		height: auto;
+    }
+    #active {
+    		position: absolute;
+	    width: 3.96rem;
+	    height: 7.6rem;
+	    top: 0;
+	    left: 50%;
+	    margin-left: -1.98rem;
+	    right: 50%;
+	    z-index: 9;
+    }
+    #active div {
+    		width: 3.96rem;
+    		height: auto;
+    		overflow: hidden;
+    		max-height: 7.6rem;
+    }
+    #active div img {
+    		width: 100%;
+    		height: auto;
+    }
+</style>
+ <!-- Swiper -->
+    <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide flex downC">
+            		<div>
+            			<img src="prod/img/xiangkuangw1.png" />
+            		</div>
+            </div>
+            <div class="swiper-slide flex downC">
+            		<div>
+            			<img src="prod/img/xiangkuangh.png" />
+            		</div>
+            </div>
+            <div class="swiper-slide flex downC">
+            	    <div>
+            	    		<img src="prod/img/xiangkuangw2.png" />
+            	    </div>
+            </div>
+            <div class="swiper-slide flex downC">
+            	    <div>
+            	    		<img src="prod/img/xiangkuangw1.png" />
+            	    </div>
+            </div>
+            <div class="swiper-slide flex downC">
+            	    <div>
+            	    		<img src="prod/img/xiangkuangh.png" />
+            	    </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+    <!--存放选择照片的容器-->
+    <div id="active" class="flex downC">
+    		<div class="flex lineC downC">
+    			<img src="" />
+    		</div>
+    </div>
+    <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+           <div class="swiper-slide">
+            		<div>
+            			<img src="http://img.taopaipai.com/images/201605/1463943704977660668.jpg@750w" />
+            		</div>
+            </div>
+            <div class="swiper-slide">
+            		<div>
+            			<img src="http://img.taopaipai.com/images/201610/source_img/_G_1475966328700.jpg@750w" />
+            		</div>
+            </div>
+            <div class="swiper-slide">
+            		<div>
+            			<img src="http://img.taopaipai.com/images/201605/1463470331741659060.jpg@750w" />
+            		</div>
+            </div>
+            <div class="swiper-slide">
+            	    <div>
+            	    		<img src="http://img.taopaipai.com/images/201607/source_img/6056_P_1469241575458.jpg@750w" />
+            	    </div>
+            </div>
+            <div class="swiper-slide">
+            	    <div>
+            	    		<img src="http://img.taopaipai.com/images/201607/source_img/6056_P_1469241574591.jpg@750w" />
+            	    </div>
+            </div>
+            <div class="swiper-slide">
+            	    <div>
+            	    		<img src="http://img.taopaipai.com/images/201607/source_img/6056_P_1469241576124.jpg@750w" />
+            	    </div>
+            </div>
+        </div>
+    </div>
+<script src="prod/js/swiper.min.js"></script>
+<script>
+	 var galleryTop = new Swiper('.gallery-top', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        pagination: '.swiper-pagination',//分页器
+        paginationType: 'fraction',//分式分页
+        slidesPerView: 1.5,
+        spaceBetween: 30,
+        loop:false,
+        loopedSlides: 5, //looped slides should be the same     
+        freeMode:false,
+        centeredSlides:true,
+        onSlideChangeEnd: function(swiper,even){
+	      	getWh();
+	    }
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 6,
+        slidesPerView: 3,
+        touchRatio: 0.2,
+        loop:false,
+        loopedSlides: 5, //looped slides should be the same
+        slideToClickedSlide: true,
+        freeMode:false,
+        centeredSlides:true,
+        onSlideChangeEnd: function(swiper,even){
+	      	goFresh ();
+	      	getWh();
+	    }
+    });
+//  galleryTop.params.control = galleryThumbs;
+//  galleryThumbs.params.control = galleryTop;
+	document.getElementById("title").innerHTML="宝格丽照片墙（12P）";
+	$(function(){
+		$(".footertwo").remove();
+		$("#title").addClass("over");
+		$(".rightbtn").show();
+		$(".rightbtn").html("提交");
+		//分别获得上下swiper——activing图片的宽高
+		goFresh ();
+		getWh();
+	});
+	//选择照片，执行goFresh()函数
+	$(document).on("click",".gallery-thumbs .swiper-slide",function(){
+		goFresh ();
+	});
+	//页面加载判断选中照片 选择照片
+	function goFresh (){
+		var active = $(".gallery-thumbs .swiper-slide-active div img").attr("src");
+		$("#active div img").attr("src",active);
+	}
+	//得到当前相框的宽高  得到照片的宽高
+	var xkw = "";
+	var xkh = "";
+	var zpw = "";
+	var zph = "";
+	var xksh = "";
+	var zpsh = "";
+	function getWh(){
+		var img = new Image();
+		img.src = $(".gallery-top .swiper-slide-active div img").attr("src");
+		xkw = img.width;
+        xkh = img.height;
+        xksh = (xkh*480/xkw);
+//      console.log(xksh);
+		var img2 = new Image();
+		img2.src = $(".gallery-thumbs .swiper-slide-active div img").attr("src");
+		zpw = img2.width;
+        zph = img2.height;
+        zpsh = (zph*480/zpw);
+//      console.log(zpsh);
+//		if (zpw>zph) {
+//      		console.log("这是宽照片");
+//      } else if(zpw==zph){
+//      		console.log("这是正方形照片");
+//      }else{
+//      		console.log("这是长照片");
+//      }
+//		if (xkw>xkh) {
+//      		console.log("这是宽相框");
+//      } else if(xkw==xkh){
+//      		console.log("这是正方形相框");
+//      }else{
+//      		console.log("这是长相框");
+//      }
+        //如果长照片宽相框
+        if (zpw<zph && xkw>xkh) {
+        		$("#active div").css("height",(xksh*1-80)/100+'rem');
+        		$("#active div img").css("height","auto");
+        		$("#active div img").css("width","100%");
+        }else if(zpw>zph && xkw>xkh){  //如果宽照片宽相框
+        		$("#active div img").css("height","100%");
+        		$("#active div img").css("width","auto");
+        }else if(zpw<zph && xkw<xkh){ //如果长照片长相框
+        		$("#active div").css("height",(xksh*1-80)/100+'rem');
+        		$("#active div img").css("height","auto");
+        		$("#active div img").css("width","100%");
+        }
+	}
+</script>		</div>
+		<div class="footertwo mianred"><i class="iconfont pplogo">&#xe62e;</i></div>
+	</body>
+</html>
+<script>
+	$(function(){ 
+		var t_img; // 定时器
+		var isLoad = true; // 控制变量
+		
+		// 判断图片加载状况，加载完成后回调
+		isImgLoad(function(){
+		   endloading();
+		});
+		
+		// 判断图片加载的函数
+		function isImgLoad(callback){
+		    // 查找所有封面图，迭代处理
+		    $('img').each(function(){
+		        // 找到为0就将isLoad设为false，并退出each
+		        if(this.height === 0){
+		            isLoad = false;
+		            return false;
+		        }
+		    });
+		    // 为true，没有发现为0的。加载完毕
+		    if(isLoad){
+		        clearTimeout(t_img); // 清除定时器
+		        // 回调函数
+		        callback();
+		    // 为false，因为找到了没有加载完成的图，将调用定时器递归
+		    }else{
+		        isLoad = true;
+		        t_img = setTimeout(function(){
+		            isImgLoad(callback); // 递归扫描
+		        },500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+		    }
+		}
+	});
+	function endloading(){
+		$('.loadingbg').fadeOut(200);
+	}
+    $(window).scroll(function(){
+        if(page){
+            var scrollTop = $(this).scrollTop();
+            var scrollHeight = $(document).height();
+            var windowHeight = $(this).height();
+            if(scrollHeight-(scrollTop + windowHeight) < 400 && scrollTop>100){
+                PageList();
+            }
+        }else{
+//          showMessage("已到底部啦~");
+        }
+    });
+</script>
+
+

@@ -1,0 +1,586 @@
+/* css reset */
+html { font-family:Helvetica;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,label,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body {background:#101010; color:#ffffff; }
+/*td,th,caption { font-size:14px; }*/
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { font-family: Verdana, Arial, Helvetica, sans-serif;color:#888888; text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+a:hover { text-decoration:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { -webkit-tap-highlight-color:rgba(0,0,0,0);border: 0;background-color: transparent; outline: none;color: #FFFFFF;}
+table { border-collapse:collapse; }
+label,div,p,span,i,li {-webkit-tap-highlight-color:rgba(0,0,0,0);}
+textarea {resize: none;}
+i {
+	font-style: normal;
+}
+/*样式*/
+.clear:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clear { *zoom:1; }
+.fl {float: left;}
+.fr {float: right;}
+.hide {display: none;}
+.circle {border-radius: 50%;}
+.divimg {
+	width: 100%;
+	height: auto;
+}
+.mianred {
+	color: rgb(251,97,101);
+}
+.bord {
+	border-bottom: 1px solid #646464;
+}
+.bort {
+	border-top: 1px solid #646464;
+}
+.deg180 {
+	transform: rotate(180deg);
+	-ms-transform:rotate(180deg); /* IE 9 */
+	-moz-transform:rotate(180deg); /* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari and Chrome */
+	-o-transform:rotate(180deg); /* Opera */
+	filter: none;
+	transition-duration: 0.2s;
+	display: inline-block;
+}
+.deg-0 {
+	transform: rotate(-0deg);
+	-ms-transform:rotate(-0deg); /* IE 9 */
+	-moz-transform:rotate(-0deg); /* Firefox */
+	-webkit-transform:rotate(-0deg); /* Safari and Chrome */
+	-o-transform:rotate(-0deg); /* Opera */
+	filter: none;
+	transition-duration: 0.2s;
+	display: inline-block;
+}
+/*弹出框确定取消*/
+.Popup { 
+	position: absolute; 
+	left: 0; 
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	/*display: none !important;*/
+}
+.Popupmb { 
+	position: fixed; 
+	width: 100%; 
+	height: 100%; 
+	top: 0;
+	left: 0; 
+	background: #000000; 
+	opacity: 0.6;
+}
+/*.Popupcon { */
+	/*position: fixed;*/
+	/*background: #FFFFFF; */
+	/*width: 6.6rem; */
+	/*border-radius: 0.1rem; */
+	/*top: 40%;*/
+/*}*/
+.Popupcon {
+	position: fixed;
+	background: #FFFFFF;
+	width: 5.4rem;
+	border-radius: 0.1rem;
+	top: 40%;
+	left: 50%;
+	margin-left: -2.7rem;
+	overflow: hidden;
+}
+.Popupcon>p {
+	color: #FB6165;
+	font-size: 0.3rem;
+	line-height: 0.4rem;
+	text-align: center;
+	padding: 0.42rem 0.3rem;
+}
+.Popupcon>ul {
+	line-height: 0.9rem;
+	font-size: 0.32rem;
+	font-weight: bold;
+}
+.Popupcon>ul>li:first-child {
+	color: #fff;
+	background: #FB6165;
+	border-bottom-left-radius: 0.1rem;
+}
+.Popupcon>ul>li:last-child {
+	color: #ffffff;
+	background: #e15458;
+	border-bottom-right-radius: 0.1rem;
+}
+/**********弹出提示**********/
+.showMessage {
+	position: fixed;
+    bottom: 3rem;
+    /*color: #fff;*/
+    color: #fff;
+    font-size: 0.28rem;
+    width: 100%;
+    z-index: 99;
+}
+.showMessage span {
+	/*background: #333;*/
+	background: #FB6165;
+    padding: 0.2rem 0.3rem;
+    border-radius: 0.06rem;
+}
+/*******弹出编辑页面*********/
+.goCloseW {
+	width: 0.34rem;
+    height: 0.36rem;
+    position: absolute;
+    left: 0.3rem;
+    font-size: 0.4rem !important;
+    color: #EEEEEE;
+}
+#messageSure {
+	border: 1px solid #D2D2D2;
+	width: 1.22rem;
+	line-height: 0.56rem;
+	color: #999999;
+	font-size: 0.3rem;
+}
+.writeMessage {
+	position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: #f4f4f4;
+}
+.writeMessage div{
+	background: #FFFFFF;
+    width: 100%;
+    height: 5.1rem;
+    margin-top: 0.88rem;
+}
+.writeMessage div textarea{
+	font-size: 0.32rem;
+	line-height: 0.4rem;
+	padding: 0.3rem;
+	color: #999999;
+}
+.lineC {
+  	   justify-content:flex-center;
+    -webkit-box-pack:center;
+  		-webkit-justify-content: center;
+		-moz-justify-content: center;
+		-ms-justify-content: center;
+		-o-justify-content: center;
+		justify-content: center;
+  }
+  .downC {
+  		-moz-box-align:center;
+    -webkit-box-align:center;
+    box-align:center; 
+	  	-webkit-align-items: center;
+		-moz-align-items: center;
+		-ms-align-items: center;
+		-o-align-items: center;
+		align-items: center;
+  }
+  .flex{
+	  display: box;
+	  display: -webkit-box;	  /*!* OLD - iOS 6-, Safari 3.1-6 *!*/
+	  display: -moz-box;		/* !* OLD - Firefox 19- (buggy but mostly works) *!*/*/
+	  display: -ms-box;	  /*!* TWEENER - IE 10 *!*/*/
+	  display: -webkit-box;
+	  display: -o-box; /*!* NEW - Chrome *!*/
+	  display: flex;
+	  display: -webkit-flex;
+  }
+  .widthA {
+	  	-webkit-box-flex: 1;	  /* OLD - iOS 6-, Safari 3.1-6 */
+		-moz-box-flex: 1;	
+		-webkit-flex: 1;		  /* Chrome */
+		-ms-flex: 1;			  /* IE 10 */
+		flex: 1;	
+		box-flex:1;
+  }
+  .wrap {
+  			flex-wrap: wrap;
+  			-webkit-flex-wrap: wrap;
+  			-ms-flex-wrap: wrap;
+  }
+  .fend {
+  			justify-content: flex-end;
+			-webkit-justify-content: flex-end;
+  }
+  /******header*****/
+header {
+    position: fixed;
+    width: 100%;
+    background: #000;
+    color: #eeeeee;
+    font-size: 0.32rem;
+    font-weight: bold;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    text-align: center;
+    z-index: 9;
+}
+.goBack {
+    width: 0.34rem;
+    height: 0.36rem;
+    position: absolute;
+    top: 0.26rem;
+    left: 0.3rem;
+    background: url("img/back.png") no-repeat top left;
+    -webkit-background-size: 0.34rem 0.36rem;
+    background-size:  0.34rem 0.36rem;
+}
+/*******bottom*******/
+.bodyBottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.98rem;
+    overflow: hidden;
+    z-index: 99;
+    background: #101010;
+}
+.bodyBottom div div {
+    width: 25%;
+    color: #ffffff;
+}
+.bodyBottom .icon {
+    font-size: 0.4rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.04rem;
+}
+.bodyBottom .text {
+    font-size: 0.22rem;
+    width: 100%;
+    text-align: center;
+}
+.ttok {
+    color: #FB6165 !important;
+}
+.Showfx {
+    position: fixed;
+    background: #000000;
+    opacity: .6;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.Showfx div img {
+    position: fixed;
+    right: 0.3rem;
+    top: 0.88rem;
+}
+.Showfx p {
+    color: #FFFFFF;
+    font-size: 0.3rem;
+    position: fixed;
+    right: 0.5rem;
+    top: 4.8rem;
+}
+/*header栏 右侧按钮*/
+    .rightbtn {
+        font-size: 0.3rem;
+        font-weight: normal;
+        position: absolute;
+        top: 0;
+        right: 0.4rem;
+        color: #fe6162;
+    }
+/*bodycontent*/
+#bodyContent {
+	position: absolute;
+    top: 0.88rem;
+    width: 100%;
+    font-size: 0.32rem;
+    margin-bottom: 1rem;
+}
+.aUform {
+    width: 7.02rem;
+    margin: 0.2rem auto 0;
+    border-radius: 0.12rem;
+    background: #333333;
+    padding: 0 0.12rem;
+}
+.aUform>li {
+    border-bottom: 1px solid #646464;
+    font-size: 0.24rem;
+    color: #ffffff;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    padding: 0 0.18rem;
+}
+.aUform>li:last-child {
+    border: none;
+}
+.aUgoto {
+    display: inline-block;
+    width: 0.18rem;
+    height: 0.28rem;
+    margin-top: 0.3rem;
+    margin-left: 0.24rem;
+    background: url("img/s_goto.png") no-repeat center center;
+    -webkit-background-size:cover;
+    background-size:cover;
+}
+.eAtip {
+    color: #ffffff;
+    font-size: 0.26rem;
+    padding-left: 0.2rem;
+    border-left: 0.07rem solid #fb6165;
+    margin: 0.2rem 0 0 0.12rem;
+}
+.eAtip i{
+    margin:0 0.12rem;
+}
+.btn {
+    width: 7.26rem;
+    height: 0.84rem;
+    line-height: 0.84rem;
+    margin: 0.6rem auto 0;
+}
+.redbtn {
+    text-align: center;
+    border-radius: 0.1rem;
+    color: #fff;
+    background-color: #FB6165;
+    font-size: 0.34rem;
+}
+.footertwo {
+	text-align: center;
+	position:absolute;
+	bottom:0; 
+	left: 0; 
+	width:100%;
+	font-size: 1.24rem ;
+}
+
+/*页面loading*/
+main {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+main.loaded {
+    transition: opacity .25s linear;
+    opacity: 1;
+}
+main .loaders {
+    width: 140px;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 auto;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+main .loaders .loader {
+    box-sizing: border-box;    
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-flex-direction:column;
+    flex-direction: column;    
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-flex-basis: 25%;
+    flex-basis: 25%;
+    /*height: 140px;*/
+   -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content:center;
+    justify-content: center;
+}
+.semi-circle-spin > div {
+    position: absolute;
+    border-width: 0px;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+.loading_logo {
+    width: 0.52rem;
+    position: absolute;
+    bottom: 0;
+    left: 26%;
+    -webkit-animation: spin-rotate 0.6s 0s infinite linear;
+    animation: spin-rotate 0.6s 0s infinite linear;
+}
+@-webkit-keyframes spin-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes spin-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+.semi-circle-spin {
+    position: relative;
+    top: -5px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    overflow: hidden;
+}
+.loadingbg {
+    background-color: rgb(0,0,0);
+    height: 100%!important;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+}
+.loadpos {
+    margin-top: 4rem;
+}
+.loadingTxt {
+    position: relative;
+    top: 0.1rem;
+    left: 0;
+    color: #888888;
+    font-size: 0.26rem;
+}
+	.shareP {
+		top: 0.23rem;
+		right: 0.2rem;
+	}
+	.shareP img {
+		width: 0.42rem;
+		height: 0.42rem;
+	}
+	.pigChoose {
+		position: fixed;
+	    top: 1.08rem;
+	    right: -0.1rem;
+	    width: 0.8rem;
+	    height: 0.8rem;
+	    z-index: 99999;
+	}
+	.pigChoose img {
+			width: 0.5rem;
+			height: 0.5rem;
+	}
+	.pigWrite {
+		position: fixed;
+	    bottom: 0;
+	    width: 100%;
+	    height: 0.84rem;
+	    color: #ffffff;
+	    font-size: 0.34rem;
+	    line-height: 0.84rem;
+	    background: #fb6165;
+	    text-align: center;
+	    left: 0;
+	    z-index: 99999;
+	}
+	.showCon {
+		position: fixed;
+	    bottom: 0;
+	    padding: 0.2rem 0.3rem 0.3rem;
+	    max-height: 1.5rem;
+	    color: #ffffff;
+	    font-size: 0.22rem;
+	    line-height: 0.38rem;
+	    background: #000000;
+	    left: 0;
+	    z-index: 99999;
+	    min-width: 6.9rem;
+	}
+	.showCon p {
+		overflow: hidden;
+	    text-overflow: ellipsis;
+	    max-height: 1.5rem;
+	}
+	/*修片意见*/
+	.popWrite {
+		position: absolute;
+		z-index: 999999;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.8);
+	}
+	.popWrite div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		padding: 0 0.3rem 0.4rem;
+		width: 6.3rem;
+		height: 5.04rem;
+		margin-top: -2.52rem;
+		margin-left: -3.45rem;
+		background: #FFFFFF;
+		border-radius: 0.12rem;
+		overflow: hidden;
+	}
+	.popWrite div p {
+		position: relative;
+		font-size: 0.28rem;
+		height: 0.8rem;
+		line-height: 0.8rem;
+		color: #000000;
+		text-align: center;
+	}
+	.popWrite div p img{
+		position: absolute;
+		top: 0.2rem;
+		right: 0rem;
+		height: 0.32rem;
+		width: 0.32rem;
+	}
+	.popWrite div textarea {
+		outline: none;
+		border: 1px solid #DDDDDD;
+		border-radius: 0.12rem;
+		padding: 0.3rem;
+		width: 5.7rem;
+		height: 2.4rem;
+		color: #888888;
+		font-size: 0.26rem;
+		-webkit-appearance: none; appearance: none; -webkit-border-radius: 0.12rem;
+	}
+	.popWrite div button {
+		background: #FB6165;
+		font-size: 0.34rem;
+		color: #FFFFFF;
+		text-align: center;
+		line-height: 0.88rem;
+		width: 6.3rem;
+		border-radius: 0.12rem;
+		margin-top: 0.4rem;
+	}
+	.popWrite div button:active {
+		background: #D95559;
+	}
+	.divimg2 {
+		width: auto;
+		height: 100%;
+	}
